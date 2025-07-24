@@ -149,7 +149,7 @@ class VLLMClient(AsyncOpenAI):
         url = f"{self.server_url}/init_communicator"
         # Send the actual host address for the StatelessProcessGroup connection
         try:
-            print("AAAA", url, self.host, self.group_port, self.world_size)
+            print("AAAA", url, self.host, self.group_port, world_size)
             response = self.session.post(url, json={"host": "0.0.0.0", "port": self.group_port, "world_size": world_size})
         except Exception as e:
             logger.error(f"Failed to init communicator: {e}")
