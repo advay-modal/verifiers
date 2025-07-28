@@ -148,7 +148,7 @@ async def run_server(args: Namespace):
 
     @app.post("/init_communicator")
     async def init_communicator(request: Request):
-        print("INIT COMMUNICATOR REQUEST RECEIVED")
+        raise Exception("INIT COMMUNICATOR REQUEST RECEIVED")
         data = await request.json()
         host = data.get("host")
         port = data.get("port")
