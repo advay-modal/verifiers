@@ -67,6 +67,7 @@ class WeightSyncWorkerExtension:
             world_size (`int`):
                 Total number of participating processes in the update group.
         """
+        print("MESSAGE RECEIVED")
         if self.pynccl_comm is not None:
             print("HELLLO")
             return
