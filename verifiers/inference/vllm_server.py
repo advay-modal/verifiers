@@ -68,6 +68,7 @@ class WeightSyncWorkerExtension:
                 Total number of participating processes in the update group.
         """
         if self.pynccl_comm is not None:
+            return
             raise RuntimeError("Weight update group already initialized. Call close_communicator first.")
 
         rank = get_world_group().rank
