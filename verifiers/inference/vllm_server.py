@@ -88,6 +88,7 @@ class WeightSyncWorkerExtension:
                 Shape of the weight tensor.
         """
         if self.pynccl_comm is None:
+            return
             raise RuntimeError("Communicator not initialized. Call `init_communicator` first.")
 
         torch_dtype = getattr(torch, dtype.split(".")[-1])
