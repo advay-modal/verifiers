@@ -67,9 +67,7 @@ class WeightSyncWorkerExtension:
             world_size (`int`):
                 Total number of participating processes in the update group.
         """
-        print("MESSAGE RECEIVED")
         if self.pynccl_comm is not None:
-            print("HELLLO")
             return
             raise RuntimeError("Weight update group already initialized. Call close_communicator first.")
 
@@ -148,7 +146,6 @@ async def run_server(args: Namespace):
 
     @app.post("/init_communicator")
     async def init_communicator(request: Request):
-        raise Exception("INIT COMMUNICATOR REQUEST RECEIVED")
         data = await request.json()
         host = data.get("host")
         port = data.get("port")
