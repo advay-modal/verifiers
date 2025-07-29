@@ -679,6 +679,7 @@ Model copies with swapped templates are available here: https://huggingface.co/c
                         conversation=messages_consumed + [message],  # type: ignore
                     )
                 )
+                print("LENGTHS", len(token_prefix), len(token_prefix_with_turn))
                 assert token_prefix_with_turn[: len(token_prefix)] == token_prefix, (
                     f"Token prefix mismatch. Token prefix: {token_prefix}, token prefix with turn: {token_prefix_with_turn}"
                 )
